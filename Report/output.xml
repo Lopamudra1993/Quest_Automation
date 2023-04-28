@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.10.6 on win32)" generated="20230428 11:42:41.783" rpa="false" schemaversion="3">
+<suite id="s1" name="LoginTest" source="D:\MAMA\my_code\QUEST_Automation_Test\TestCases\LoginTest.robot">
+<kw name="Open Website" library="login_keywords" type="SETUP">
+<arg>${SiteUrl}</arg>
+<arg>${Browser}</arg>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${SiteUrl}</arg>
+<arg>${Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230428 11:42:42.035" level="INFO">Opening browser 'chrome' to base url 'https://finance.yahoo.com/'.</msg>
+<status status="PASS" starttime="20230428 11:42:42.035" endtime="20230428 11:42:54.682"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230428 11:42:54.682" endtime="20230428 11:42:54.797"/>
+</kw>
+<status status="PASS" starttime="20230428 11:42:42.035" endtime="20230428 11:42:54.797"/>
+</kw>
+<test id="s1-t1" name="Create_Yahoo_Account" line="18">
+<kw name="Generate Random String" library="String">
+<var>${Random}</var>
+<arg>5</arg>
+<arg>[NUMBERS]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<msg timestamp="20230428 11:42:54.800" level="INFO">${Random} = 74241</msg>
+<status status="PASS" starttime="20230428 11:42:54.799" endtime="20230428 11:42:54.800"/>
+</kw>
+<kw name="Validate_loginpage" library="login_keywords">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${logo}</arg>
+<arg>5</arg>
+<arg>failed to load login page</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20230428 11:42:54.803" endtime="20230428 11:42:54.817"/>
+</kw>
+<status status="PASS" starttime="20230428 11:42:54.802" endtime="20230428 11:42:54.818"/>
+</kw>
+<kw name="Click_Sign_In_Button" library="login_keywords">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${btn_signin}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20230428 11:42:54.818" endtime="20230428 11:42:54.831"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${btn_signin}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230428 11:42:54.832" level="INFO">Clicking element '//a[@id='header-signin-link']'.</msg>
+<status status="PASS" starttime="20230428 11:42:54.831" endtime="20230428 11:42:55.939"/>
+</kw>
+<status status="PASS" starttime="20230428 11:42:54.818" endtime="20230428 11:42:55.939"/>
+</kw>
+<kw name="Create_New_Account" library="login_keywords">
+<arg>${User_First_Name}</arg>
+<arg>${User_Last_Name}</arg>
+<arg>${email}${Random}</arg>
+<arg>${password}</arg>
+<arg>${Birth}</arg>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${create_account}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20230428 11:42:55.940" endtime="20230428 11:42:55.952"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${create_account}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230428 11:42:55.953" level="INFO">Clicking element 'id:createacc'.</msg>
+<status status="PASS" starttime="20230428 11:42:55.952" endtime="20230428 11:42:56.447"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${first_name}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20230428 11:42:56.447" endtime="20230428 11:42:56.447"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${first_name}</arg>
+<arg>${User_First_Name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230428 11:42:56.447" level="INFO">Typing text 'Lopa' into text field 'id=usernamereg-firstName'.</msg>
+<status status="PASS" starttime="20230428 11:42:56.447" endtime="20230428 11:42:56.537"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${last_name}</arg>
+<arg>${User_Last_Name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230428 11:42:56.537" level="INFO">Typing text 'Das' into text field 'id=usernamereg-lastName'.</msg>
+<status status="PASS" starttime="20230428 11:42:56.537" endtime="20230428 11:42:56.618"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${accnt_email}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230428 11:42:56.618" level="INFO">Typing text 'lopadas74241' into text field 'id=usernamereg-userId'.</msg>
+<status status="PASS" starttime="20230428 11:42:56.618" endtime="20230428 11:42:56.709"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${accnt_password}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230428 11:42:56.710" level="INFO">Typing text 'password@1234@' into text field 'xpath://input[@type="password"]'.</msg>
+<status status="PASS" starttime="20230428 11:42:56.709" endtime="20230428 11:42:56.798"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${Birth_Year}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20230428 11:42:56.798" endtime="20230428 11:42:56.808"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Birth_Year}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230428 11:42:56.808" level="INFO">Clicking element 'xpath=//*[@id='usernamereg-year']'.</msg>
+<status status="PASS" starttime="20230428 11:42:56.808" endtime="20230428 11:42:56.853"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Birth_Year}</arg>
+<arg>1991</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230428 11:42:56.854" level="INFO">Typing text '1991' into text field 'xpath=//*[@id='usernamereg-year']'.</msg>
+<status status="PASS" starttime="20230428 11:42:56.853" endtime="20230428 11:42:56.906"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${Present}</var>
+<arg>Element Should Be Visible</arg>
+<arg>${Birth_Day}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${Birth_Day}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230428 11:42:56.996" level="INFO">Element 'id=usernamereg-day' is displayed.</msg>
+<status status="PASS" starttime="20230428 11:42:56.906" endtime="20230428 11:42:57.000"/>
+</kw>
+<msg timestamp="20230428 11:42:57.000" level="INFO">${Present} = True</msg>
+<status status="PASS" starttime="20230428 11:42:56.906" endtime="20230428 11:42:57.000"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${Present}==True</arg>
+<arg>Select From List By Value</arg>
+<arg>${Birth_Month}</arg>
+<arg>2</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<arg>${Birth_Month}</arg>
+<arg>2</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20230428 11:42:57.000" level="INFO">Selecting options from selection list 'id=usernamereg-month' by value 2.</msg>
+<status status="PASS" starttime="20230428 11:42:57.000" endtime="20230428 11:42:57.067"/>
+</kw>
+<status status="PASS" starttime="20230428 11:42:57.000" endtime="20230428 11:42:57.067"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${Present}==True</arg>
+<arg>Input Text</arg>
+<arg>${Birth_Day}</arg>
+<arg>${Birth}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Birth_Day}</arg>
+<arg>${Birth}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230428 11:42:57.068" level="INFO">Typing text '1994' into text field 'id=usernamereg-day'.</msg>
+<status status="PASS" starttime="20230428 11:42:57.068" endtime="20230428 11:42:57.134"/>
+</kw>
+<status status="PASS" starttime="20230428 11:42:57.067" endtime="20230428 11:42:57.134"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${Present}==True</arg>
+<arg>Input Text</arg>
+<arg>${Birth_Year}</arg>
+<arg>1991</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Birth_Year}</arg>
+<arg>1991</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230428 11:42:57.136" level="INFO">Typing text '1991' into text field 'xpath=//*[@id='usernamereg-year']'.</msg>
+<status status="PASS" starttime="20230428 11:42:57.136" endtime="20230428 11:42:57.195"/>
+</kw>
+<status status="PASS" starttime="20230428 11:42:57.134" endtime="20230428 11:42:57.195"/>
+</kw>
+<status status="PASS" starttime="20230428 11:42:55.940" endtime="20230428 11:42:57.195"/>
+</kw>
+<kw name="Click_Continue_Button" library="login_keywords">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${confirm_btn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230428 11:42:57.195" level="INFO">Clicking element 'xpath://button[@id='reg-submit-button']'.</msg>
+<status status="PASS" starttime="20230428 11:42:57.195" endtime="20230428 11:42:58.543"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20230428 11:42:58.689" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-3.png"&gt;&lt;img src="selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230428 11:42:58.543" endtime="20230428 11:42:58.691"/>
+</kw>
+<status status="PASS" starttime="20230428 11:42:57.195" endtime="20230428 11:42:58.691"/>
+</kw>
+<kw name="Validate_Secure_Page" library="login_keywords">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${secure_page}</arg>
+<arg>5</arg>
+<arg>failed to go secure page</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20230428 11:42:58.691" endtime="20230428 11:42:58.708"/>
+</kw>
+<status status="PASS" starttime="20230428 11:42:58.691" endtime="20230428 11:42:58.708"/>
+</kw>
+<doc>creating a new account in YAHOO</doc>
+<tag>YahooFinance</tag>
+<status status="PASS" starttime="20230428 11:42:54.797" endtime="20230428 11:42:58.709"/>
+</test>
+<kw name="close browsers" library="login_keywords" type="TEARDOWN">
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20230428 11:42:58.710" endtime="20230428 11:43:04.906"/>
+</kw>
+<status status="PASS" starttime="20230428 11:42:58.710" endtime="20230428 11:43:04.906"/>
+</kw>
+<status status="PASS" starttime="20230428 11:42:41.783" endtime="20230428 11:43:04.906"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">YahooFinance</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="LoginTest">LoginTest</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
